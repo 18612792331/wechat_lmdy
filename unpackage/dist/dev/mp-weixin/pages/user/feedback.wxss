@@ -1,0 +1,5 @@
+
+.solids::after {
+	border: 1rpx solid #45506a;
+}
+

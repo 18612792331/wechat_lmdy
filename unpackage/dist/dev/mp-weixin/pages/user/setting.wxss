@@ -1,0 +1,7 @@
+
+.bottom-login-btn{
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+}
+

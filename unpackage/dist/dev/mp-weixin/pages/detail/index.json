@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "gmy-float-touch": "/components/gmy-float-touch/gmy-float-touch",
+    "uni-icons": "/components/uni-icon/uni-icon",
+    "tv-search": "/components/tvSearch/tvSearch",
+    "adview": "/components/home-ad/ad-view"
+  }
+}

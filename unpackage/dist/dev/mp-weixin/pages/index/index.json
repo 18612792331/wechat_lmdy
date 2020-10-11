@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "云试听",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "u-notice-bar": "/components/u-notice-bar/u-notice-bar",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "adview": "/components/home-ad/ad-view",
+    "add-tip": "/components/struggler-uniapp-add-tip/struggler-uniapp-add-tip"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/guide/index",
+    "pages/guide/list",
+    "pages/index/index",
+    "pages/detail/index",
+    "pages/cate/index",
+    "pages/cate/lists",
+    "pages/search/index",
+    "pages/user/index",
+    "pages/user/ucenter",
+    "pages/user/login",
+    "pages/user/register",
+    "pages/user/child/changeUsi",
+    "pages/user/child/changePsw",
+    "pages/user/setting",
+    "pages/webview/webview",
+    "pages/user/history",
+    "pages/user/feedback",
+    "pages/live/index",
+    "pages/live/detail",
+    "pages/user/child/giftCode"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "云试听",
+    "navigationBarBackgroundColor": "#161827",
+    "backgroundColor": "#161827"
+  },
+  "tabBar": {
+    "color": "#a1a6b3",
+    "selectedColor": "#ed2f85",
+    "borderStyle": "black",
+    "backgroundColor": "#161827",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/icon/homepage_normal.png",
+        "selectedIconPath": "static/icon/homepage_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/search/index",
+        "iconPath": "static/icon/search_normal.png",
+        "selectedIconPath": "static/icon/search_active.png",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/cate/index",
+        "iconPath": "static/icon/video_normal.png",
+        "selectedIconPath": "static/icon/video_active.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "static/icon/people_normal.png",
+        "selectedIconPath": "static/icon/people_active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 15000,
+    "downloadFile": 15000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "为您匹配最近的节点，提供更好的服务"
+    }
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap32.json"
+}

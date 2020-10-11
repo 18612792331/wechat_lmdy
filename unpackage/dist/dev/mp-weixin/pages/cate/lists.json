@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "adview": "/components/home-ad/ad-view"
+  }
+}

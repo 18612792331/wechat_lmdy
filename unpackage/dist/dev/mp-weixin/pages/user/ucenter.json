@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "帐号管理",
+  "usingComponents": {
+    "adview": "/components/home-ad/ad-view"
+  }
+}

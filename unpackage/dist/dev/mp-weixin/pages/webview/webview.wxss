@@ -1,0 +1,5 @@
+
+.web-view ._img{
+	width: 100%;
+}
+
