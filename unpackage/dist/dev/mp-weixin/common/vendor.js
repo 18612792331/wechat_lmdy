@@ -862,11 +862,6 @@ function initProperties(props) {var isBehavior = arguments.length > 1 && argumen
       type: String,
       value: '' };
 
-    // 用于字节跳动小程序模拟抽象节点
-    properties.generic = {
-      type: Object,
-      value: null };
-
     properties.vueSlots = { // 小程序不能直接定义 $slots 的 props，所以通过 vueSlots 转换到 $slots
       type: null,
       value: [],
@@ -1165,17 +1160,14 @@ function handleEvent(event) {var _this = this;
             }
             handler.once = true;
           }
-          var params = processEventArgs(
+          ret.push(handler.apply(handlerCtx, processEventArgs(
           _this.$vm,
           event,
           eventArray[1],
           eventArray[2],
           isCustom,
-          methodName);
+          methodName)));
 
-          // 参数尾部增加原始事件对象用于复杂表达式内获取额外数据
-          // eslint-disable-next-line no-sparse-arrays
-          ret.push(handler.apply(handlerCtx, (Array.isArray(params) ? params : []).concat([,,,,,,,,,, event])));
         }
       });
     }
@@ -7523,7 +7515,7 @@ function internalMixin(Vue) {
   };
 
   Vue.prototype.__map = function(val, iteratee) {
-    //TODO 暂不考虑 string
+    //TODO 暂不考虑 string,number
     var ret, i, l, keys, key;
     if (Array.isArray(val)) {
       ret = new Array(val.length);
@@ -7537,13 +7529,6 @@ function internalMixin(Vue) {
       for (i = 0, l = keys.length; i < l; i++) {
         key = keys[i];
         ret[key] = iteratee(val[key], key, i);
-      }
-      return ret
-    } else if (typeof val === 'number') {
-      ret = new Array(val);
-      for (i = 0, l = val; i < l; i++) {
-        // 第一个参数暂时仍和小程序一致
-        ret[i] = iteratee(i, i);
       }
       return ret
     }
@@ -7672,9 +7657,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!****************************************!*\
-  !*** D:/PROJECT/uniapp/app/pages.json ***!
-  \****************************************/
+/*!*************************************************!*\
+  !*** E:/RESOURCE/uniapp/wechat_lmdy/pages.json ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -8675,13 +8660,13 @@ main();
 /*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, bugs, bundleDependencies, deprecated, description, devDependencies, files, gitHead, homepage, license, main, name, repository, scripts, version, default */
 /***/ (function(module) {
 
-module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.0.0-28820200820001","_inBundle":false,"_integrity":"sha512-8KiE+2a8+V4BZR1YK4+ztMOVG4khWf+E5BAZjWA4BqMKTji99CtgbB/x1saGfOM+oK6UHgDLm8YlcL26uK2ZNw==","_location":"/@dcloudio/uni-stat","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"@dcloudio/uni-stat@next","name":"@dcloudio/uni-stat","escapedName":"@dcloudio%2funi-stat","scope":"@dcloudio","rawSpec":"next","saveSpec":null,"fetchSpec":"next"},"_requiredBy":["#USER","/","/@dcloudio/vue-cli-plugin-uni"],"_resolved":"https://registry.npmjs.org/@dcloudio/uni-stat/-/uni-stat-2.0.0-28820200820001.tgz","_shasum":"f033ebb407b7a8aefc4b19b49eb154a826350149","_spec":"@dcloudio/uni-stat@next","_where":"/Users/guoshengqiang/Documents/dcloud-plugins/release/uniapp-cli","author":"","bugs":{"url":"https://github.com/dcloudio/uni-app/issues"},"bundleDependencies":false,"deprecated":false,"description":"","devDependencies":{"@babel/core":"^7.5.5","@babel/preset-env":"^7.5.5","eslint":"^6.1.0","rollup":"^1.19.3","rollup-plugin-babel":"^4.3.3","rollup-plugin-clear":"^2.0.7","rollup-plugin-commonjs":"^10.0.2","rollup-plugin-copy":"^3.1.0","rollup-plugin-eslint":"^7.0.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-replace":"^2.2.0","rollup-plugin-uglify":"^6.0.2"},"files":["dist","package.json","LICENSE"],"gitHead":"8fb3c6c0272c6fbfa2c8507003446fac31a8dec3","homepage":"https://github.com/dcloudio/uni-app#readme","license":"Apache-2.0","main":"dist/index.js","name":"@dcloudio/uni-stat","repository":{"type":"git","url":"git+https://github.com/dcloudio/uni-app.git","directory":"packages/uni-stat"},"scripts":{"build":"NODE_ENV=production rollup -c rollup.config.js","dev":"NODE_ENV=development rollup -w -c rollup.config.js"},"version":"2.0.0-28820200820001"};
+module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.0.0-28320200727001","_inBundle":false,"_integrity":"sha512-WE4UMWPIpO02wlx1vmnsXpMCFjWfiCe1RaWiKb/UamN44zdvDHcxJZqLBkEWQcL/GjdH80nCL5+wW2QWFlgUWQ==","_location":"/@dcloudio/uni-stat","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"@dcloudio/uni-stat@next","name":"@dcloudio/uni-stat","escapedName":"@dcloudio%2funi-stat","scope":"@dcloudio","rawSpec":"next","saveSpec":null,"fetchSpec":"next"},"_requiredBy":["#USER","/","/@dcloudio/vue-cli-plugin-uni"],"_resolved":"https://registry.npmjs.org/@dcloudio/uni-stat/-/uni-stat-2.0.0-28320200727001.tgz","_shasum":"1758c35abbba9a3c3951d5b4815491d064048a3b","_spec":"@dcloudio/uni-stat@next","_where":"/Users/guoshengqiang/Documents/dcloud-plugins/release/uniapp-cli","author":"","bugs":{"url":"https://github.com/dcloudio/uni-app/issues"},"bundleDependencies":false,"deprecated":false,"description":"","devDependencies":{"@babel/core":"^7.5.5","@babel/preset-env":"^7.5.5","eslint":"^6.1.0","rollup":"^1.19.3","rollup-plugin-babel":"^4.3.3","rollup-plugin-clear":"^2.0.7","rollup-plugin-commonjs":"^10.0.2","rollup-plugin-copy":"^3.1.0","rollup-plugin-eslint":"^7.0.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-replace":"^2.2.0","rollup-plugin-uglify":"^6.0.2"},"files":["dist","package.json","LICENSE"],"gitHead":"9b36bd8bc013ae87dffe654d0567c51fb332d629","homepage":"https://github.com/dcloudio/uni-app#readme","license":"Apache-2.0","main":"dist/index.js","name":"@dcloudio/uni-stat","repository":{"type":"git","url":"git+https://github.com/dcloudio/uni-app.git","directory":"packages/uni-stat"},"scripts":{"build":"NODE_ENV=production rollup -c rollup.config.js","dev":"NODE_ENV=development rollup -w -c rollup.config.js"},"version":"2.0.0-28320200727001"};
 
 /***/ }),
 /* 7 */
-/*!********************************************************!*\
-  !*** D:/PROJECT/uniapp/app/pages.json?{"type":"stat"} ***!
-  \********************************************************/
+/*!*****************************************************************!*\
+  !*** E:/RESOURCE/uniapp/wechat_lmdy/pages.json?{"type":"stat"} ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8690,9 +8675,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 8 */
-/*!*********************************************************!*\
-  !*** D:/PROJECT/uniapp/app/pages.json?{"type":"style"} ***!
-  \*********************************************************/
+/*!******************************************************************!*\
+  !*** E:/RESOURCE/uniapp/wechat_lmdy/pages.json?{"type":"style"} ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8834,9 +8819,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 15 */
-/*!***********************************************************!*\
-  !*** D:/PROJECT/uniapp/app/common/vmeitime-http/index.js ***!
-  \***********************************************************/
+/*!********************************************************************!*\
+  !*** E:/RESOURCE/uniapp/wechat_lmdy/common/vmeitime-http/index.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8932,9 +8917,9 @@ function _getTimeStamp() {
 
 /***/ }),
 /* 16 */
-/*!***************************************************************!*\
-  !*** D:/PROJECT/uniapp/app/common/vmeitime-http/interface.js ***!
-  \***************************************************************/
+/*!************************************************************************!*\
+  !*** E:/RESOURCE/uniapp/wechat_lmdy/common/vmeitime-http/interface.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9010,9 +8995,9 @@ exports.default = {
 
 /***/ }),
 /* 17 */
-/*!**********************************************!*\
-  !*** D:/PROJECT/uniapp/app/common/helper.js ***!
-  \**********************************************/
+/*!*******************************************************!*\
+  !*** E:/RESOURCE/uniapp/wechat_lmdy/common/helper.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9022,11 +9007,11 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 // 接口服务器图片域名(API域名，BANNER图、广告图之类的) apiImageUrl
 // 远程图片域(CMS域名) imageUrl
 
-var websiteSecret = '8e1bef825a149ec425b78a7f5b40830b';
+var websiteSecret = 'c1f4zmtPH7O9yuBtfxUFtniHQ9nE3lkcfN9KnYTnguo2OJZfFar/K6267lNu';
 var websiteUrl = '',apiImageUrl = '',imageUrl = '',shareUrl = '';
 var cachePath = '/cache/';
 // 全局应用名称
-var appName = '云试听';
+var appName = '龙猫看电影';
 
 // APP、H5域名配置
 
@@ -9040,9 +9025,9 @@ var appName = '云试听';
 
 // 小程序必须是https，运行预览时需将域名添加进小程序后台域名列表内！否则需要打开调试模式！
 
-websiteUrl = 'http://girltujian.com/api.php';
-apiImageUrl = 'http://girltujian.com';
-imageUrl = 'http://www.lmdy.xyz:8009/';
+websiteUrl = 'https://girltujian.com/api.php';
+apiImageUrl = 'https://girltujian.com';
+imageUrl = 'https://www.girltujian.com/';
 
 
 // APP分享到微信的H5页面地址，需配置微信开放平台APPID(测试功能)
@@ -9069,9 +9054,9 @@ var getUrlName = function getUrlName(url) {
 
 /***/ }),
 /* 18 */
-/*!*******************************************!*\
-  !*** D:/PROJECT/uniapp/app/utils/base.js ***!
-  \*******************************************/
+/*!****************************************************!*\
+  !*** E:/RESOURCE/uniapp/wechat_lmdy/utils/base.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9145,9 +9130,9 @@ var getUrlName = function getUrlName(url) {
 /* 37 */,
 /* 38 */,
 /* 39 */
-/*!*******************************************************!*\
-  !*** D:/PROJECT/uniapp/app/common/autoUpdater.min.js ***!
-  \*******************************************************/
+/*!****************************************************************!*\
+  !*** E:/RESOURCE/uniapp/wechat_lmdy/common/autoUpdater.min.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9165,9 +9150,9 @@ var getUrlName = function getUrlName(url) {
 /* 46 */,
 /* 47 */,
 /* 48 */
-/*!*******************************************!*\
-  !*** D:/PROJECT/uniapp/app/common/md5.js ***!
-  \*******************************************/
+/*!****************************************************!*\
+  !*** E:/RESOURCE/uniapp/wechat_lmdy/common/md5.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9855,7 +9840,7 @@ var getUrlName = function getUrlName(url) {
     }
   }
 })();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 49), __webpack_require__(/*! ./../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 3)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/node-libs-browser/mock/process.js */ 49), __webpack_require__(/*! (webpack)/buildin/global.js */ 3)))
 
 /***/ }),
 /* 49 */
@@ -10237,9 +10222,9 @@ module.exports = __webpack_amd_options__;
 /* 58 */,
 /* 59 */,
 /* 60 */
-/*!***********************************************!*\
-  !*** D:/PROJECT/uniapp/app/static/js/util.js ***!
-  \***********************************************/
+/*!********************************************************!*\
+  !*** E:/RESOURCE/uniapp/wechat_lmdy/static/js/util.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

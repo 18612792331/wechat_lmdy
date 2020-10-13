@@ -3,27 +3,27 @@
 // 接口服务器图片域名(API域名，BANNER图、广告图之类的) apiImageUrl
 // 远程图片域(CMS域名) imageUrl
 
-const websiteSecret = '8e1bef825a149ec425b78a7f5b40830b';
+const websiteSecret = 'c1f4zmtPH7O9yuBtfxUFtniHQ9nE3lkcfN9KnYTnguo2OJZfFar/K6267lNu';
 let websiteUrl = '',apiImageUrl = '',imageUrl = '', shareUrl = '';
 const cachePath = '/cache/';
 // 全局应用名称
-const appName = '云试听';
+const appName = '龙猫看电影';
 
 // APP、H5域名配置
 // #ifndef MP
 /* websiteUrl = 'http://xcx.matan.com.cn/api.php';
 apiImageUrl = 'http://xcx.matan.com.cn';
 imageUrl = 'http://maccms.matan.com.cn/'; */
-websiteUrl = 'http://girltujian.com/api.php';
+/* websiteUrl = 'http://girltujian.com/api.php';
 apiImageUrl = 'http://girltujian.com';
-imageUrl = 'http://www.lmdy.xyz:8009/';
+imageUrl = 'http://www.girltujian.com/'; */
 // #endif
 
 // 小程序必须是https，运行预览时需将域名添加进小程序后台域名列表内！否则需要打开调试模式！
 // #ifdef MP
-websiteUrl = 'http://girltujian.com/api.php';
-apiImageUrl = 'http://girltujian.com';
-imageUrl = 'http://www.lmdy.xyz:8009/';
+websiteUrl = 'https://girltujian.com/api.php';
+apiImageUrl = 'https://girltujian.com';
+imageUrl = 'https://www.girltujian.com/';
 // #endif
 
 // APP分享到微信的H5页面地址，需配置微信开放平台APPID(测试功能)
