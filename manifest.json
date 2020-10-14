@@ -1,5 +1,5 @@
 {
-    "name" : "云试听",
+    "name" : "龙猫电影",
     "appid" : "__UNI__90400BF",
     "description" : "乐在一起看天下！",
     "versionName" : "2.0",
@@ -187,7 +187,7 @@
         "appid" : "wx255234a311ba457e",
         "setting" : {
             "urlCheck" : false,
-            "minified" : false
+            "minified" : true
         },
         "usingComponents" : true,
         "permission" : {

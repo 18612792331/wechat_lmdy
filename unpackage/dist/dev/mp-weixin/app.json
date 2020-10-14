@@ -24,7 +24,7 @@
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "云试听",
+    "navigationBarTitleText": "龙猫电影",
     "navigationBarBackgroundColor": "#161827",
     "backgroundColor": "#161827"
   },
@@ -69,6 +69,5 @@
       "desc": "为您匹配最近的节点，提供更好的服务"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap37.json"
+  "usingComponents": {}
 }

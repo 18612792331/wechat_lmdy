@@ -20,7 +20,7 @@
 		, {
 			"path": "pages/index/index",
 			"style":{
-				"navigationBarTitleText": "云试听",
+				"navigationBarTitleText": "龙猫电影",
 				"enablePullDownRefresh": true,
 				"app-plus":{
 					"titleNView":{
@@ -239,7 +239,7 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "云试听",
+		"navigationBarTitleText": "龙猫电影",
 		"navigationBarBackgroundColor": "#161827",
 		"backgroundColor": "#161827"
 	},

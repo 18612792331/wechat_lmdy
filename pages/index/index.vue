@@ -455,7 +455,7 @@ export default {
 			this.getHomeADList();
 			this.adSwitch();
 			// #ifdef MP
-			// this.getPopupInfo();
+			this.getPopupInfo();
 			// #endif
 			this.getMsgList();
 			this.getbannerList();

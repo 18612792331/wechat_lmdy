@@ -760,7 +760,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7114,7 +7114,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7135,14 +7135,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7227,7 +7227,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8682,7 +8682,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/guide/index": {}, "pages/guide/list": {}, "pages/index/index": { "navigationBarTitleText": "云试听", "enablePullDownRefresh": true }, "pages/detail/index": { "navigationBarTitleText": "" }, "pages/cate/index": { "navigationBarTitleText": "频道分类" }, "pages/cate/lists": { "navigationBarTitleText": "" }, "pages/search/index": { "navigationBarTitleText": "搜索" }, "pages/user/index": { "navigationBarTitleText": "", "enablePullDownRefresh": true }, "pages/user/ucenter": { "navigationBarTitleText": "帐号管理" }, "pages/user/login": { "navigationBarTitleText": "" }, "pages/user/register": { "navigationBarTitleText": "" }, "pages/user/child/changeUsi": { "navigationBarTitleText": "修改资料" }, "pages/user/child/changePsw": { "navigationBarTitleText": "修改密码" }, "pages/user/setting": { "navigationBarTitleText": "设置" }, "pages/webview/webview": {}, "pages/user/history": { "navigationBarTitleText": "浏览历史" }, "pages/user/feedback": { "navigationBarTitleText": "建议反馈" }, "pages/live/index": { "navigationBarTitleText": "发现" }, "pages/live/detail": {}, "pages/user/child/giftCode": { "navigationBarTitleText": "兑换码" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "云试听", "navigationBarBackgroundColor": "#161827", "backgroundColor": "#161827" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/guide/index": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/guide/list": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/index": { "navigationBarTitleText": "龙猫电影", "enablePullDownRefresh": true, "usingComponents": { "adview": "/components/home-ad/ad-view", "u-notice-bar": "/components/u-notice-bar/u-notice-bar", "uni-popup": "/components/uni-popup/uni-popup", "add-tip": "/components/struggler-uniapp-add-tip/struggler-uniapp-add-tip" }, "usingAutoImportComponents": { "u-notice-bar": "/components/u-notice-bar/u-notice-bar", "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/detail/index": { "navigationBarTitleText": "", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup", "uni-icons": "/components/uni-icon/uni-icon", "tv-search": "/components/tvSearch/tvSearch", "adview": "/components/home-ad/ad-view", "gmy-float-touch": "/components/gmy-float-touch/gmy-float-touch" }, "usingAutoImportComponents": { "uni-popup": "/components/uni-popup/uni-popup", "gmy-float-touch": "/components/gmy-float-touch/gmy-float-touch" } }, "pages/cate/index": { "navigationBarTitleText": "频道分类", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/cate/lists": { "navigationBarTitleText": "", "usingComponents": { "adview": "/components/home-ad/ad-view" }, "usingAutoImportComponents": {} }, "pages/search/index": { "navigationBarTitleText": "搜索", "usingComponents": { "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision" }, "usingAutoImportComponents": {} }, "pages/user/index": { "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": { "adview": "/components/home-ad/ad-view" }, "usingAutoImportComponents": {} }, "pages/user/ucenter": { "navigationBarTitleText": "帐号管理", "usingComponents": { "adview": "/components/home-ad/ad-view" }, "usingAutoImportComponents": {} }, "pages/user/login": { "navigationBarTitleText": "", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/register": { "navigationBarTitleText": "", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/child/changeUsi": { "navigationBarTitleText": "修改资料", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/child/changePsw": { "navigationBarTitleText": "修改密码", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/setting": { "navigationBarTitleText": "设置", "usingComponents": { "adview": "/components/home-ad/ad-view" }, "usingAutoImportComponents": {} }, "pages/webview/webview": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/history": { "navigationBarTitleText": "浏览历史", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/feedback": { "navigationBarTitleText": "建议反馈", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/live/index": { "navigationBarTitleText": "发现", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/live/detail": { "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup", "uni-icon": "/components/uni-icon/uni-icon", "tv-search": "/components/tvSearch/tvSearch", "adview": "/components/home-ad/ad-view" }, "usingAutoImportComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/user/child/giftCode": { "navigationBarTitleText": "兑换码", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "龙猫电影", "navigationBarBackgroundColor": "#161827", "backgroundColor": "#161827" } };exports.default = _default;
 
 /***/ }),
 /* 9 */,

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "云试听",
+  "navigationBarTitleText": "龙猫电影",
   "enablePullDownRefresh": true,
   "usingComponents": {
     "u-notice-bar": "/components/u-notice-bar/u-notice-bar",

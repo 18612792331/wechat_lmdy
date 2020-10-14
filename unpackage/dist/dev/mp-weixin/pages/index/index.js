@@ -648,7 +648,7 @@ var _autoUpdaterMin = _interopRequireDefault(__webpack_require__(/*! @/common/au
       this.getHomeADList();
       this.adSwitch();
 
-      // this.getPopupInfo();
+      this.getPopupInfo();
 
       this.getMsgList();
       this.getbannerList();
